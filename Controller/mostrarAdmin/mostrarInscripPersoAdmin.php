@@ -1,0 +1,177 @@
+<?php
+    function mostrarInscripcionesPerso(){
+
+        // Traemos la informacion de los usuarios desde el modelo, a partir de la clase y la funcion
+        $objConsultas = new Consultas();
+        $result = $objConsultas->mostrarInscripcionesPersoAdmin();
+
+        if (!isset($result)) {
+            echo '<h2>No hay inscripciones registradas en el sistema</h2>';
+        }else {
+            foreach ($result as $f) {
+                $nombreActividad = $objConsultas->obtenerNombreActividadPorCodigo($f['codigo_actividad']);
+                $nombreUsuario = $objConsultas->obtenerNombreUsuario($f['id_usuario']);
+                $apellidoUsuario = $objConsultas->obtenerApellidoUsuario($f['id_usuario']);
+                $nombreEntrenador = $objConsultas->obtenerNombreUsuario($f['id_entrenador']);
+                $apellidoEntrenador = $objConsultas->obtenerApellidoUsuario($f['id_entrenador']);
+                echo '
+                    <tr>
+                        <td><i class="icofont-clip-board planes"></i></td>
+                        <td>' . $f['codigo_inscripcion_perso'] . '</td>
+                        <td>' . $f['fecha_inicio_actividad'] . '</td>
+                        <td>' . $f['hora_inicio_actividad'] . '</td>
+                        <td>' . $f['estado_inscripcion_perso'] . '</td>
+                        <td>' . $f['comentarios_inscripcion_perso'] . '</td>
+                        <td>' . $nombreActividad . '</td>
+                        <td>' . $f['codigo_venta_plan'] . '</td>
+                        <td>' . $nombreUsuario . ' ' . $apellidoUsuario . '</td>
+                        <td>' . $nombreEntrenador . ' ' . $apellidoEntrenador . '</td>
+                        <td><a href="verComprobanteInscripPerso.php?id_user=' . $f['codigo_inscripcion_perso'] . '" class="btn btn-info"> Comprobante</a></td>
+                        <td><a href="modificarInscripcionesPerso.php?id_user=' . $f['codigo_inscripcion_perso'] . '" class="btn btn-success"> Ver/Editar</a></td>
+                        <td><a href="../../Controller/eliminarAdmin/eliminarInscripcionesPersoAdmin.php?id_user=' . $f['codigo_inscripcion_perso'] . '" class="btn btn-danger btnEliminacionInscripPerso"> Eliminar <i class="icofont-ui-delete"></i></a></td>
+                    </tr>
+                ';
+            }
+        }
+
+    }
+    // Funcion para mostrar la info del usuario a modificar en un formulario
+    function cargarInscripcionesPerso(){
+        $id_user = $_GET['id_user'];
+
+        $objConsultas = new Consultas();
+        $result = $objConsultas->buscarInscripcionesPerso($id_user);
+
+        foreach ($result as $f) {
+            echo '
+                <form action="../../Controller/modificarAdmin/modificarInscripcionPersoAdmin.php" method="POST" name="actualizarInscripcionPersoForm">
+                    <div class="row">
+                        <div class="form-group col-lg-4 col-md-6">
+                            <label>NUMERO INSCRIPCION</label>
+                            <input type="number" class="form-control" placeholder="Ingrese la fecha" name="codigo_inscripcion_perso" required="required" readonly value="' . $f['codigo_inscripcion_perso'] . '">
+                        </div>
+                        <div class="form-group col-lg-4 col-md-6">
+                            <label>FECHA INICIO ACTIVIDAD</label>
+                            <input type="date" class="form-control" placeholder="Ingrese la fecha" name="fecha_inicio_actividad" value="' . $f['fecha_inicio_actividad'] . '">
+                        </div>
+                        <div class="form-group col-lg-4 col-md-6">
+                            <label>HORA INICIO ACTIVIDAD</label>
+                            <input type="time" class="form-control" placeholder="Ingrese la hora" name="hora_inicio_actividad" value="' . $f['hora_inicio_actividad'] . '">
+                        </div>
+                        <div class="form-group col-lg-4 col-md-6">
+                            <label>ESTADO INSCRIPCION</label>
+                            <select name="estado_inscripcion_perso" id="" class="form-control">
+                                <option value="' . $f['estado_inscripcion_perso'] . '"> ' . $f['estado_inscripcion_perso'] . '</option>
+                                <option value="Programada">Programada</option>
+                                <option value="Asistio">Asistio</option>
+                                <option value="No Asistio">No Asistio</option>
+                                <option value="Finalizada">Finalizada</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-lg-4 col-md-6">
+                            <label>COMENTARIOS</label>
+                            <input type="textarea" class="form-control" placeholder="Ingrese un comentario" name="comentarios_inscripcion_perso" value="' . $f['comentarios_inscripcion_perso'] . '">
+                        </div>
+                        <div class="form-group col-lg-4 col-md-6">
+                            <label>ACTIVIDAD</label>
+                            <input type="number" class="form-control" placeholder="Ingrese un comentario" name="codigo_actividad" required="required" readonly value="' . $f['codigo_actividad'] . '">
+                        </div>
+                        <div class="form-group col-lg-4 col-md-6">
+                            <label>NUMERO PLAN</label>
+                            <input type="number" class="form-control" placeholder="Ingrese el numero del plan" name="codigo_venta_plan" required="required" readonly value="' . $f['codigo_venta_plan'] . '">
+                        </div>
+                        <div class="form-group col-lg-4 col-md-6">
+                            <label>NUMERO IDENTIFICACION CLIENTE</label>
+                            <input type="number" class="form-control" placeholder="Ingrese un numero de identificacion" name="id_usuario" required="required" readonly value="' . $f['id_usuario'] . '">
+                        </div>
+                        <div class="form-group col-lg-4 col-md-6">
+                            <label>NUMERO IDENTIFICACION ENTRENADOR</label>
+                            <input type="number" class="form-control" placeholder="Ingrese un numero de identificacion" name="id_entrenador" required="required" readonly value="' . $f['id_entrenador'] . '">
+                        </div>
+                        <div class="form-group col-lg-4 col-md-6">
+                            <button type="submit" class="btn btn-primary update btnActualizarInscripcionPerso">Actualizar Inscripcion</button>
+                        </div>
+                    </div>
+                </form>
+            ';
+        }
+
+    }
+    // Esta funcion muestra el comprobante de la inscripcion
+    function cargarInscripcionPersoAdmin(){
+        $id_user = $_GET['id_user'];
+
+        $objConsultas = new Consultas();
+        $result = $objConsultas->buscarInscripcionPersoAdmin($id_user);
+
+        foreach ($result as $f) {
+            $nombreActividad = $objConsultas->obtenerNombreActividadPorCodigo($f['codigo_actividad']);
+            $rolUsuario = $objConsultas->obtenerRolUsuario($f['id_usuario']);
+            $nombreUsuario = $objConsultas->obtenerNombreUsuario($f['id_usuario']);
+            $apellidoUsuario = $objConsultas->obtenerApellidoUsuario($f['id_usuario']);
+            $telefonoUsuario = $objConsultas->obtenerTelefonoUsuario($f['id_usuario']);
+            // Traer los datos del entrenador
+            $nombreEntrenador = $objConsultas->obtenerNombreUsuario($f['id_entrenador']);
+            $apellidoEntrenador = $objConsultas->obtenerApellidoUsuario($f['id_entrenador']);
+            $telefonoEntrenador = $objConsultas->obtenerTelefonoUsuario($f['id_entrenador']);
+            echo '
+                <article class="body-recibo">
+                    <h2 class="recibo-centro">Apreciado(a): ' . $rolUsuario . '</h2>
+                    <h3 class="parrafo-centro">Te informamos que tu inscripcion:</h3>
+                    <div class="article-info">
+                        <section id="uno">
+                            <h4>Con Numero De Referencia: ' . $f['codigo_inscripcion_perso'] . '</h4>
+                        </section>
+                        <section id="dos">
+                            <h5>Fue ' . $f['estado_inscripcion_perso'] . '</h5>
+                        </section>
+                        <section id="tres">
+                            <p class="arriba-recibo">Inscripcion ' . $nombreActividad . '</p>
+                            <p class="medio-recibo">Fecha Programada: ' . $f['fecha_inicio_actividad'] . ' Hora De Ingreso: ' . $f['hora_inicio_actividad'] . '</p>
+                        </section>
+                    </div>
+                    <div class="table-article">
+                        <h4 class="info-pa">Los siguientes datos corresponden al la inscripcion:</h4>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <p class="parrafo-lista sombra-abajo">Numero Id.Cliente</p>
+                                <p class="parrafo-lista sombra-abajo">Nombre Cliente</p>
+                                <p class="parrafo-lista sombra-abajo">Numero Telefono Cliente</p>
+                                <p class="parrafo-lista sombra-abajo">Numero Id.Entrenador</p>
+                                <p class="parrafo-lista sombra-abajo">Nombre Entrenador</p>
+                                <p class="parrafo-lista sombra-abajo">Numero Telefono Entrenador</p>
+                                <p class="parrafo-lista sombra-abajo">Fecha de Programacion</p>
+                                <p class="parrafo-lista sombra-abajo">Hora de Ingreso</p>
+                                <p class="parrafo-lista sombra-abajo">Codigo Actividad Inscrita</p>
+                                <p class="parrafo-lista sombra-abajo">Empresa</p>
+                                <p class="parrafo-lista sombra-abajo">Numero Inscripcion</p>
+                                <p class="parrafo-lista sombra-abajo">Numero Plan Aquirido</p>
+                                <p class="parrafo-lista sombra-abajo">Estado Inscripcion</p>
+                                <p class="parrafo-lista sombra-abajo mb-5">Comentarios Inscripcion</p>
+                            </div>
+                            <div class="col-lg-6">
+                                <p class="parrafo-valor sombra-abajo">' . $f['id_usuario'] . '</p>
+                                <p class="parrafo-valor sombra-abajo">' . $nombreUsuario . ' ' . $apellidoUsuario . '</p>
+                                <p class="parrafo-valor sombra-abajo">' . $telefonoUsuario . '</p>
+                                <p class="parrafo-valor sombra-abajo">' . $f['id_entrenador'] . '</p>
+                                <p class="parrafo-valor sombra-abajo">' . $nombreEntrenador . ' ' . $apellidoEntrenador . '</p>
+                                <p class="parrafo-valor sombra-abajo">' . $telefonoEntrenador . '</p>
+                                <p class="parrafo-valor sombra-abajo">' . $f['fecha_inicio_actividad'] . '</p>
+                                <p class="parrafo-valor sombra-abajo">' . $f['hora_inicio_actividad'] . '</p>
+                                <p class="parrafo-valor sombra-abajo">' . $f['codigo_actividad'] . '</p>
+                                <p class="parrafo-valor sombra-abajo">Gimnasio Moderno</p>
+                                <p class="parrafo-valor sombra-abajo">' . $f['codigo_inscripcion_perso'] . '</p>
+                                <p class="parrafo-valor sombra-abajo">' . $f['codigo_venta_plan'] . '</p>
+                                <p class="parrafo-valor sombra-abajo">' . $f['estado_inscripcion_perso'] . '</p>
+                                <p class="parrafo-valor sombra-abajo mb-5">' . $f['comentarios_inscripcion_perso'] . '</p>
+                            </div>
+                        </div> 
+                        <p class="parrafo-valor mb-5 text-center">Copyright © 2023 Gimnasio Moderno. Todos los derechos reservados.</p>  
+                    </div>
+                </article>                
+            ';
+        }
+
+    }
+
+?>

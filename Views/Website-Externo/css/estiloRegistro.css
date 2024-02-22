@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --dark: #16191c;
+    --dark-x: #1e2126;
+    --light: #ffffff;
+    --gim1: #0d7377;
+    --transparent: #4c4c4c;
+    --tercer-color: #323232;
+    --cuarto-color: #212121;
+    --quinto-color:  #14ffec;
+}
+
+h1, h5{
+    font-family: 'Montserrat', sans-serif;
+}
+
+a.destacado{
+    color: #ffffff !important;
+}
+
+h5.color{
+    color: var(--quinto-color);
+}
+
+label, a, p{
+    font-family: 'Cinzel Decorative', cursive;
+}
+
+button.login{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    background: #007bff;
+}
+
+button.login:hover{
+    background: #0069d9;
+}
+
+a.register{
+    color: var(--quinto-color) !important;
+}
+
+a.register:hover{
+    color: #ffffff !important;
+}
+
+button.propia{
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+body{
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 600;
+    color: var(--light);
+}
+
+input.margin{
+    background: #4c4c4c;
+    color: var(--light); /* Ajusta el color del texto */
+    border: 1px solid var(--dark);
+    border-bottom: 6px solid #14ffec !important;
+}
+
+input.margin::placeholder {
+    color: #ffffffa7; /* Color del texto del placeholder */
+}
+
+/* Estilo para los correos electrónicos guardados */
+input.margin:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px var(--tercer-color) inset !important;
+    -webkit-text-fill-color: var(--light) !important;
+    caret-color: var(--light) !important;
+}
+
+input.margin:focus {
+    background: var(--tercer-color);
+    color: var(--light); /* Color del texto cuando está en foco */
+    border: 1px solid var(--quinto-color) !important;
+    border-bottom: 5px solid #14ffec !important;
+}
+
+.bg-dark { 
+    background-color: var(--cuarto-color) !important; 
+}
+
+/* Estilos Logo, con la clase que le agregamos */
+.custom-img{
+    width: 300px;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+.bg-dark-x{
+    background-color: var(--light);
+}
+
+/* agregamos la clase del boton de inciar sesion para que tengan el mismo estilos que los input */
+.form-control{
+    /* Con esta propiedad agrandomos los imput del formulario de bootsrap */
+    min-height: 3.125rem;
+    line-height: initial;
+    border-bottom: 6px solid #14ffec !important;
+    font-weight: 600;
+}
+
+.btn{
+    /* Con esta propiedad agrandomos los imput del formulario de bootsrap */
+    min-height: 3.125rem;
+    line-height: initial;
+}
+
+/* Estilo general para el input select */
+.form-select-container {
+    position: relative; /* Asegura que el contenedor sea relativo */
+    display: inline-block; /* Asegura que el contenedor tome el ancho del select */
+}
+
+.form-select {
+    min-height: 3.125rem;
+    line-height: initial;
+    border-bottom: 6px solid #14ffec !important;
+    font-weight: 600;
+    background: #4c4c4c;
+    color: #ffffffa7; /* Ajusta el color del texto */
+    -webkit-appearance: none; /* Oculta la flecha predeterminada en navegadores basados en WebKit */
+    -moz-appearance: none; /* Oculta la flecha predeterminada en navegadores basados en Gecko (Firefox) */
+    appearance: none; /* Oculta la flecha predeterminada */
+    width: 100%; /* Hace que el select ocupe todo el ancho del contenedor */
+    padding-right: 30px; /* Ajusta el padding para dejar espacio para la flecha */
+    border: 1px solid var(--dark);
+}
+
+/* Estilo para el texto del placeholder */
+.form-select::placeholder {
+    color: var(--light); /* Color del texto del placeholder */
+}
+
+/* Estilo para el fondo del input select cuando se autocompleta */
+.form-select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px var(--tercer-color) inset !important;
+    -webkit-text-fill-color: var(--light) !important;
+    caret-color: var(--light) !important;
+}
+
+/* Estilo para el input select cuando está en foco */
+.form-select:focus {
+    background: var(--tercer-color);
+    color: var(--light); /* Color del texto cuando está en foco */
+    border: 1px solid var(--quinto-color) !important;
+    border-bottom: 5px solid #14ffec !important;
+    outline: none; /* Evita el contorno de enfoque */
+}
+
+/* Estilo para la flecha del input select */
+.select-arrow {
+    position: absolute; /* Posiciona la flecha */
+    top: 70%; /* Alinea verticalmente la flecha */
+    right: 20px; /* Alinea la flecha a la derecha */
+    transform: translateY(-50%); /* Centra verticalmente la flecha */
+    width: 0; 
+    height: 0; 
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #ffffffa7; /* Color del ícono de flecha */
+}
+
+/* Cambia el color del icono de calendario a blanco */
+.custom-date-input input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(100%);
+}
+
+.img-1{
+    background-image: url(../../Extras/imgCarrusel/sushil-ghimire-eFx1KZhaSvo-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.7); /* Ajusta la opacidad deseada */
+}
+
+.img-2{
+    background-image: url(../../Extras/imgCarrusel/barbell-ga2dc664c7_1280.jpg);
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.7); /* Ajusta la opacidad deseada */
+}
+
+.img-3{
+    background-image: url(../../Extras/imgCarrusel/atleta-masculino-entrenando-duro-gimnasio.jpg);
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.7); /* Ajusta la opacidad deseada */
+}
+
+.img-4{
+    background-image: url(../../Extras/imgCarrusel/hermosa-chica-gimnasio\ \(1\).jpg);
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.7); /* Ajusta la opacidad deseada */
+}
+
+@media screen and (min-width: 1300px) and (max-width: 1483px){
+    .img-1{
+        height: auto;
+    }
+    .img-2{
+        height: auto;
+    }
+    .img-3{
+        height: auto;
+    }
+}

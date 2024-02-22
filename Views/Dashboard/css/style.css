@@ -1,0 +1,1350 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root{
+    --primer-color: #14ffec;
+    --segundo-color: #0d7377;
+    --tercer-color: #323232;
+    --cuarto-color: #212121;
+    --quinto-color: #ffffff;
+    --sexto-color: #efefef;
+}
+
+h1,h2,h3,h4,h5,h6,b,input,button,td,th{
+    font-family: 'Montserrat', sans-serif;
+}
+
+p,a,li{
+    font-family: 'Cinzel Decorative', cursive;
+}
+
+
+body{
+    /* Overflox, con esta propiedad no se podra escroliar hacia abajo con el mauso, el navbar estara quieto */
+    overflow: hidden;
+    font-family: sans-serif;
+    font-family: 300;
+    color: var(--segundo-color);
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    width: 100%;
+    max-width: 1305px;
+    margin: 0 auto;
+}
+
+a:hover{
+    text-decoration: none;
+}
+/* Esta clase es de boostrap, la llamamos para sobreescribir el valor que viene por defecto de la libreria de boostrap */
+.bg-primary{
+    background-color: var(--cuarto-color) !important;/*Con el important hacemos que cambie de color default de boostrap*/
+}
+.bg-light {
+    background-color: var(--quinto-color) !important;
+}
+
+.bg-grey{
+    background-color: var(--quinto-color) !important;
+}
+
+.btn{
+    border: 0;
+}
+
+#sidebar-container {
+    width: 100%;
+    max-width: 270px;
+    min-height: 100vh;
+    overflow-y: auto;
+    max-height: 80vh;
+    position: relative;
+    z-index: 1;
+    flex: 0 0 270px;
+}
+
+#sidebar-container::-webkit-scrollbar {
+    width: 0px; /* Ancho del scrollbar */
+}
+
+#sidebar-container::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color del thumb (barra deslizadora) */
+}
+
+#sidebar-container::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Color de fondo del track (fondo del scrollbar) */
+}
+
+/* Para navegadores que no son WebKit (Firefox, Edge, etc.) */
+#sidebar-container {
+    scrollbar-width:none;
+    scrollbar-color: #888 #f1f1f1;
+    padding: 18px 0 0 0;
+}
+
+#sidebar-container .logo img {
+    max-width: 100% !important;
+    height: auto;
+    width: 100%; /* Ajusta el tamaño del logo según tus necesidades */
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+#sidebar-container nav a:hover {
+    background: linear-gradient(90deg, #212121 0%, rgb(20, 255, 236) 100%);
+}
+
+/* Estilos para el menu del sidebar los items */
+a.item{
+    color: var(--quinto-color);
+    font-weight: bold;
+}
+
+/* Estilos del dropdawn de perfil admin */
+a.admin-boton{
+    font-weight: bold;
+    color: var(--segundo-color) !important;
+}
+
+.dropdown-item{
+    font-weight: 600;
+}
+
+.dropdown-item:hover{
+    color: var(--quinto-color);
+    background: linear-gradient(90deg, #212121 0%, rgb(20, 255, 236) 100%);
+}
+
+#sidebar a.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Otros estilos para el enlace activo */
+}
+
+.avatar {
+    max-width: 60px;
+}
+
+#content{
+    /* Overflow nos permite scrolear en direccion inferior */
+    overflow-y: scroll;
+    height: calc(100vh - 3.9rem); /* Ajusta según tus necesidades */
+    padding-bottom: 6.9rem;
+    width: 100%;
+    max-width: 1880px;
+    margin: 0 auto;
+    /*scrollbar-width: thin; /* Estilo de barra de desplazamiento para navegadores que no son WebKit */
+    scrollbar-color: #6b6b6b #f1f1f1; /* Color del pulgar y fondo de la barra de desplazamiento */
+}
+
+.stat{
+    border-right: 1px solid var(--sexto-color);
+}
+
+@media (max-width: 768px){
+    /* #sidebar-container{
+        display: none;
+    } */
+    .stat{
+        border: 0;
+    }
+}
+
+.hamburger {
+    display: inline-block;
+    left: 0px;
+    position: relative;
+    top: 10px;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+    width: 37px;
+    z-index: 999;
+}
+
+.hamburger .line {
+    background-color: #252525;
+    display: block;
+    height: 3px;
+    margin: 4px auto;
+    width: 22px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger:hover {
+    cursor: pointer;
+}
+
+.sidebar {
+    display: none;
+    background-color: #222;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    height: 100%;
+    width: 200px;
+}
+
+#sidebar-container.collapsed {
+    display: none;
+}
+
+.perfil-foto {
+    width: 60%;
+    max-height: 100%;
+    margin: 0 auto;
+    border-radius: 5%;
+    display: block;
+}
+
+h3.card-rol {
+    font-size: 17px;
+    font-family: 'Roboto', sans-serif !important;
+    color: #ffffff;
+    text-align: center;
+    margin: 0 auto;
+}
+
+p.rol {
+    color: #14ffec !important;
+    margin: 0 auto;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.card {
+    background: var(--quinto-color) !important;
+    margin: 7.5px 0;
+    padding: 20px;
+    border-radius: 3px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);                      
+}
+
+section.py-3{
+    background: var(--quinto-color);
+}
+
+.card-title {
+    font-weight: 400;
+    font-size: 18px;
+    margin: 0;
+}
+
+.card-body{
+    width: 100%; /* O cualquier otro porcentaje que se ajuste a tus necesidades */
+    max-width: 1483px; /* Puedes establecer un ancho máximo si lo deseas */
+    margin: 0 auto; /* Centrar la tarjeta si es necesario */
+}
+
+.icofont-ui-delete:before{
+    margin-left: 5px;
+}
+
+/* Estilos Boton Formulario Actualizacion */
+button.update{
+    margin-top: 32px;
+    width: 100%;
+    min-height: 43px;
+}
+
+/* Estilos para el select con Bootstrap */
+.form-control {
+    -webkit-appearance: menulist;
+    -moz-appearance: menulist;
+    appearance: menulist;
+}
+
+/* Estilos adicionales para el caret en navegadores webkit */
+.form-control::-webkit-inner-spin-button,
+.form-control::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Estilos para la vista de perfiles de usuario */
+.imagen-ancho-completo {
+    width: 350px;
+    height: 420px;
+    margin: 0 auto;
+    display: block;
+    margin-top: 30px;
+    display: block;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55), filter 0.3s ease-in-out;
+    filter: brightness(100%);
+}
+
+.imagen-ancho-completo:hover {
+    transform: scale(1.1) translate(10px, 10px);
+    filter: brightness(70%) contrast(120%);
+}
+
+h5.card-title{
+    font-size: 30px;
+    font-weight: 600;
+}
+
+p.admin-rol{
+    color: #0d7377 !important;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.stars{
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.icofont-star{
+    color: #FFC107;
+}
+
+.message{
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.message::after{
+    content: "";
+    position: absolute;
+    top: 50px; /* Agrega esta propiedad para alinear el borde en la parte inferior */
+    left: 0; /* Opcional: para alinear el borde a lo largo de todo el elemento */
+    width: 100%; /* Opcional: para que el borde ocupe todo el ancho del elemento */
+    border-bottom: 1px solid #968e96;
+}
+
+p.profile{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+p.propio{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+}
+
+p.recibo{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+
+p.title-admin{
+    margin-top: 30px !important;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+}
+
+/* Estilos de las tarjetas detalladas de los usuarios */
+.body{
+    width: 100%;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+.col-lg-5 img {
+    width: 290px;
+    height: 350px;
+    margin: 50px auto;
+    display: block;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55), filter 0.3s ease-in-out;
+    filter: brightness(100%);
+}
+
+.col-lg-5 img:hover {
+    transform: scale(1.1) translate(10px, 10px);
+    filter: brightness(70%) contrast(120%);
+}
+
+.col-lg-7.lista{
+    margin: auto auto;
+    margin-bottom: 60px;
+}
+
+h5.titulo-ficha{
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+a.ver-user{
+    margin: 0 auto;
+    width: 50%;
+    margin-top: 15px;
+}
+
+/* Estilos titulos de tablas y formularios */
+
+h1.title-table{
+    font-weight: 600;
+    text-align: center;
+    color: var(--cuarto-color);
+    margin-bottom: 15px;
+}
+
+p.parrafo-table{
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Estilos para las tablas */
+
+.table-responsive {
+    max-width: 1170px;
+    overflow-x: auto; /* Permite desplazamiento horizontal */
+}
+
+
+@media screen and (min-width: 1901px) and (max-width: 2000px){
+    .container {
+        max-width: 1800px;
+    }
+    .table-responsive {
+        max-width: 1550px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 1801px) and (max-width: 1900px){
+    .container {
+        max-width: 100%;
+    }
+    .table-responsive {
+        max-width: 1450px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 1722px) and (max-width: 1800px){
+    .container {
+        max-width: 100%;
+    }
+    .table-responsive {
+        max-width: 1370px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 1650px) and (max-width: 1721px){
+    .container {
+        max-width: 100%;
+    }
+    .table-responsive {
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 1550px) and (max-width: 1649px){
+    .container {
+        max-width: 100%;
+    }
+    .table-responsive {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1549px){
+    .container {
+        max-width: 100%;
+    }
+    .table-responsive {
+        max-width: 1050px;
+        margin: 0 auto;
+    }
+    h3.subtitulo-plan{
+        font-size: 18px !important;
+    }
+    p.card-text-planes{
+        font-size: 13px !important;
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399px){
+    .container {
+        max-width: 100%;
+    }
+    .table-responsive {
+        max-width: 850px;
+        margin: 0 auto;
+    }
+    .col-lg-5{
+        max-width: 100%;
+        flex: none;
+    }
+    .col-lg-5 img{
+        width: 35%;
+    }
+    .col-lg-6{
+        max-width: 100%;
+        flex: none;
+    }
+    .col-lg-7.lista{
+        max-width: 100%;
+        flex: none;
+    }
+    .col-lg-3{
+        flex: none;
+        max-width: 50%;
+    }
+    .card-img {
+        width: 60% !important;
+    }
+    .plan-bg {
+        max-width: 513px !important;
+    }
+}
+
+@media screen and (min-width: 1077px) and (max-width: 1199px){
+    .container {
+        width: 100%;
+    }
+    .table-responsive {
+        max-width: 720px;
+        margin: 0 auto;
+    }
+    .col-lg-5{
+        max-width: 100%;
+        flex: none;
+    }
+    .col-lg-5 img{
+        width: 40%;
+    }
+    .col-lg-6{
+        max-width: 100%;
+        flex: none;
+    }
+    .col-lg-7.lista{
+        max-width: 100%;
+        flex: none;
+    }
+    .col-lg-3{
+        flex: none;
+        max-width: 50%;
+    }
+    .card-img {
+        width: 80% !important;
+    }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1076px){
+    .container {
+        width: 100%;
+    }
+    .table-responsive {
+        max-width: 650px;
+        margin: 0 auto;
+    }
+    .col-lg-3 {
+        max-width: 100%;
+    }
+    label{
+        font-size: 14px;
+    }
+    .col-lg-5{
+        max-width: 100%;
+        flex: none;
+    }
+    .col-lg-5 img{
+        max-width: 100%;
+        flex: none;
+    }
+    .col-lg-6{
+        max-width: 100%;
+        flex: none;
+    }
+    .col-lg-7.lista{
+        max-width: 100%;
+        flex: none;
+    }
+    .col-lg-3{
+        flex: none;
+        max-width: 50%;
+    }
+    .card-img {
+        width: 80% !important;
+    }
+    
+}
+
+@media screen and (min-width: 992px) and (max-width: 1440px){
+    .col-lg-4 {
+        flex: none !important;
+        max-width: 100% !important;
+    }
+    .col-lg-8{
+        flex: none !important;
+        max-width: 100% !important;
+    }
+}
+
+@media screen and (min-width: 900px) and (max-width: 999px){
+    .container {
+        width: 100%;
+    }
+    .table-responsive {
+        max-width: 550px;
+        margin: 0 auto;
+    }
+    label{
+        font-size: 14px;
+    }
+    .col-lg-5{
+        max-width: 100%;
+        flex: none;
+    }
+    .col-lg-6{
+        max-width: 100%;
+        flex: none;
+    }
+    .col-lg-7.lista{
+        max-width: 100%;
+        flex: none;
+    }
+    .col-lg-3{
+        flex: none;
+        max-width: 50%;
+    }
+    .col-lg-3.member{
+        max-width: 100%;
+    }
+
+    .plan-bg {
+        margin: 0 auto;
+        max-width: 100% !important;
+    }
+
+}
+
+@media screen and (min-width: 800px) and (max-width: 899px){
+    .container {
+        width: 100%;
+    }
+    .table-responsive {
+        max-width: 450px;
+        margin: 0 auto;
+    }
+    .col-lg-6{
+        max-width: 100%;
+        flex: none;
+    }
+    .plan-bg {
+        margin: 0 auto;
+        max-width: 100% !important;
+    }
+
+}
+
+@media screen and (min-width: 700px) and (max-width: 799px){
+    .container {
+        width: 100%;
+    }
+    .table-responsive {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    h1{
+        font-size: 30px;
+    }
+    h1.title-table{
+        font-size: 30px;
+    }
+    p.parrafo-table{
+        font-size: 15px;
+    }
+    .plan-bg {
+        margin: 0 auto;
+        max-width: 100% !important;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 699px){
+    .container {
+        width: 100%;
+    }
+    .table-responsive {
+        max-width: 250px;
+        margin: 0 auto;
+    }
+    h1{
+        font-size: 30px;
+    }
+    h1.title-table{
+        font-size: 30px;
+    }
+    p.parrafo-table{
+        font-size: 15px;
+    }
+    .plan-bg {
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 500px) and (max-width: 599px){
+    .container {
+        width: 100%;
+    }
+    .table-responsive {
+        max-width: 195px;
+        margin: 0 auto;
+    }
+    h1{
+        font-size: 30px;
+    }
+    h1.title-table{
+        font-size: 30px;
+    }
+    p.parrafo-table{
+        font-size: 15px;
+    }
+}
+
+/* Estilos para las celdas */
+.table-responsive th,
+.table-responsive td {
+    padding: 8px; /* Ajusta según sea necesario */
+    vertical-align: top; /* Ajusta la alineación vertical */
+}
+
+.table-responsive th,
+.table-responsive td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 150px; /* ancho maximo para las celdas */
+    line-height: 25px;
+}
+
+.table-responsive th {
+    background: var(--segundo-color);
+    color: var(--quinto-color);
+    border: 1px solid #cccccc;
+    text-align: center;
+    font-size: 13.9px;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd)>* {
+    --bs-table-bg-type: initial; /* O utiliza unset en lugar de initial si es más adecuado para tu caso */
+}
+
+.table-striped>tbody>tr:nth-of-type(odd):hover>* {
+    background: #e7f1fd; /* Color de fondo más oscuro al pasar el ratón por encima */
+    transition: background-color 0.3s; /* Agrega una transición suave para el cambio de color */
+}
+
+/* Estilos para las celdas en las filas impares de la tabla responsive */
+.table-responsive tbody td {
+    background: var(--quinto-color);
+    text-align: center;
+    font-size: 13.9px;
+}
+
+/* Estilos para las filas en hover de la tabla responsive */
+.table-responsive tbody tr:hover>* {
+    background: #e7f1fd; /* Color de fondo más oscuro al pasar el ratón por encima */
+    transition: background-color 0.3s; /* Agrega una transición suave para el cambio de color */
+}
+
+table.dataTable.no-footer {
+    border-bottom: 0px solid #fff;
+}
+
+.form-inline {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 100%; /* Establecer el ancho al 100% para ocupar todo el espacio disponible */
+}
+
+.dataTables_wrapper .dataTables_paginate{
+    display: flex;
+    justify-content: space-between;
+    margin-left: inherit;
+    padding-top: 20px;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button a{
+    color: var(--segundo-color);
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button{
+    background: var(--quinto-color);
+    color: var(--cuarto-color);
+    padding: 8px 15px;
+    font-weight: 600;
+    border: 1px solid #cccccc;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover{
+    color: var(--quinto-color);
+    background: var(--quinto-color);
+}
+
+div.dt-buttons {
+    margin: 10px auto;
+}
+
+button.dt-button, div.dt-button, a.dt-button {
+    background: var(--quinto-color);
+    color: var(--cuarto-color);
+    padding: 8px 15px;
+    font-weight: 600;
+    border: 1px solid #cccccc;
+}
+
+button.dt-button, div.dt-button, a.dt-button:hover {
+    color: var(--quinto-color);
+    border: 1px solid #cccccc !important;
+    background: linear-gradient(90deg, #212121 0%, rgb(20, 255, 236) 100%) !important;
+}
+
+/* Estilos para los formularios */
+.form-control{
+    border: 1px solid #cccccc;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Agregando transición para suavizar el cambio */
+    min-height: 43px;
+}
+
+.form-control:focus {
+    border: 2px solid var(--segundo-color); /* Color del borde al pasar el ratón o hacer clic */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2); /* Cambiar la sombra al pasar el ratón o hacer clic */
+}
+
+/* Estilos para la lista de actividades */
+.tarjeta{
+    width: 100%;
+    padding: 50px;
+    display: flex;
+    justify-content: center !important;
+    flex-direction: column;
+}
+
+.card-img {
+    width: 100%;
+    height: 370px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55), filter 0.3s ease-in-out;
+    filter: brightness(100%);
+    display: block;
+    margin: 0 auto;
+}
+
+.card-img:hover{
+    transform: scale(1.1) translate(10px, 10px);
+    filter: brightness(70%) contrast(120%);
+}
+
+.target{
+    width: 100%;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+
+/* Estilos de las estrellitas */
+.activity{
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.activity::after{
+    content: "";
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid #968e96;
+}
+
+p.inscrip{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 15px;
+    margin-bottom: 0;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+h4.moto{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+/* Estilos alertas sweetalert2 */
+.swal2-confirm{
+    background: #007bff !important;
+}
+
+/* Estilos para el icono de planes */
+.planes{
+    font-size: 60px;
+    color: var(--tercer-color);
+}
+
+/* Estilos para las tarjetas de los planes */
+.ancho-tarjeta{
+    width: 100%;
+    max-width: 1200px;
+}
+
+.plan-bg{
+    width: 100%;
+    max-width: 400px;
+    height: 390px;
+    border-radius: 5px;
+    padding: 25px 20px;
+    background: #f8f9fe !important;
+}
+
+.plan-bg:hover{
+    color: var(--quinto-color);
+    background: linear-gradient(90deg, #212121 0%, rgb(20, 255, 236) 100%) !important;
+    border-left: none; /* Quita el borde izquierdo */
+    border-right: none; /* Quita el borde derecho */
+}
+
+h1.titulo-plan{
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+h3.subtitulo-plan{
+    font-size: 21px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+p.card-text-planes{
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+p.sombra{
+    border-bottom: 1px solid #dee2e6;
+}
+
+p.separacion{
+    margin-bottom: 30px;
+}
+
+a.story{
+    margin-bottom: 8px;
+}
+
+/* Estilos para el detalle del pedido de planes*/
+
+i.plan-tag{
+    font-size: 1700%;
+    color: var(--tercer-color);
+    margin: 0 auto;
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55), filter 0.3s ease-in-out;
+    filter: brightness(100%);
+    display: block;
+}
+
+i.plan-tag:hover{
+    transform: scale(1.1) translate(10px, 10px);
+    filter: brightness(70%) contrast(120%);
+}
+
+i.icon-si{
+    font-size: 200%;
+}
+
+.estado-pedido {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    background: var(--quinto-color);
+}
+  
+/* Estilos para cada paso */
+.paso {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+}
+  
+.icono {
+    font-size: 30px;
+    background-color: var(--segundo-color);
+    color: #fff;
+    border-radius: 50%;
+    padding: 5px;
+    margin-bottom: 10px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0;
+    position: relative;
+}
+
+.paso:hover .icono::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.texto {
+    font-size: 14px;
+    font-weight: bold;
+}
+  
+.flecha {
+    width: 100%;
+    height: 5px;
+    background-color: var(--segundo-color);
+
+}
+
+/* Añade estilos específicos para cada paso si es necesario */
+.paso-comprado .icono {
+    background-color: var(--segundo-color);
+}
+
+.paso-enviado .icono {
+    background-color: var(--segundo-color);
+}
+
+.paso-entregado .icono {
+    background-color: var(--segundo-color);
+}
+
+.paso-devuelto .icono {
+    background-color: var(--segundo-color);
+}
+
+.paso-vencido .icono {
+    background-color: var(--segundo-color);
+}
+  
+h1.cash-pago{
+    font-size: 35px;
+    font-weight: 600;
+    color: var(--cuarto-color);
+}
+
+/* Estilos para el logo en el detalle de los planes */
+section #recibo{
+    background: var(--cuarto-color);
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    border-right: 1px solid #323232;
+    border-left: 1px solid #323232;
+    border-top: 1px solid #323232;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.card-recibo{
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 0;
+    background: var(--cuarto-color);
+}
+
+section #planta{
+    background: var(--primer-color);
+    padding: 25px;
+    border-right: 1px solid #323232;
+    border-left: 1px solid #323232;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+h1.title-recibo{
+    text-align: center;
+    font-weight: 700;
+    font-size: 20px;
+    color: #010A43;
+}
+
+article.body-recibo{
+    /* box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2); */
+    border-right: 1px solid #323232;
+    border-left: 1px solid #323232;
+    border-bottom: 1px solid #323232;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+h2.recibo-centro{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+h3.parrafo-centro{
+    text-align: center;
+    margin-top: 5px;
+    font-size: 20px;
+}
+
+/* Estios para la clase articulo desde mostrarpago */
+.article-info{
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    border: 1px solid #323232;
+    border-radius: 25px;
+    margin-top: 25px;
+    border-bottom: 1px solid #323232;
+}
+
+.table-article{
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+section #uno{
+    background: var(--cuarto-color);
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    border-bottom: 1px solid #323232;
+}
+
+section #uno h4{
+    text-align: center;
+    padding: 20px;
+    color: var(--quinto-color);
+    font-size: 22px;
+    font-weight: 600;
+}
+
+section #dos{
+    background: #007bff;
+    border-bottom: 1px solid #323232;
+}
+
+section #dos h5{
+    text-align: center;
+    padding: 20px;
+    color: var(--quinto-color);
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0;
+}
+
+section #tres{
+    padding: 20px 100px 20px 100px;
+    text-align: center;
+}
+
+section #tres p.arriba-recibo{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+section #tres p.medio-recibo{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+section #tres p.abajo-recibo{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+@media print {
+    .col-lg-6 {
+        float: left; /* Alinear las columnas en la impresión */
+        width: 50%; /* Hacer que cada columna ocupe el 50% del ancho */
+        box-sizing: border-box; /* Incluir el relleno y el borde en el ancho */
+    }
+}
+
+img.logo-positivo{
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+}
+
+h4.info-pa{
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+p.parrafo-lista{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    font-weight: 800;
+}
+
+p.parrafo-valor{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+}
+
+p.sombra-abajo{
+    border-bottom: 1px solid #323232;
+}
+
+img.image-logo{
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55), filter 0.3s ease-in-out;
+    filter: brightness(100%);
+    display: block;
+}
+
+img.image-logo:hover{
+    transform: scale(1.1) translate(10px, 10px);
+    filter: brightness(70%) contrast(120%);
+}
+
+/* Estilos para el fomulario de pedidos y ventas */
+
+.fresh{
+    border-radius: 0.25rem;
+}
+
+.form-check{
+    width: 100%;
+    border: 1px solid #cccccc !important;
+    display: flex;
+    align-items: center;
+    min-height: 43px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    padding-left: 35px;
+}
+
+.form-check:hover{
+    border: 2px solid var(--segundo-color) !important;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.form-check-input[type=radio]{
+    border: 1px solid #999999 !important;
+}
+
+.kriss{
+    border-radius: 0.25rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid #cccccc;
+}
+
+i.umbita{
+    border: 1px solid #999999;
+    font-size: 50px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0; /* Puedes ajustar esto según tus necesidades */
+    color: var(--segundo-color);
+    padding: 15px;
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55), filter 0.3s ease-in-out;
+    filter: brightness(100%);
+}
+
+i.umbita:hover{
+    transform: scale(1.1) translate(10px, 10px);
+    filter: brightness(70%) contrast(120%);
+}
+
+p.texto-pequeño{
+    font-size: 16px;
+}
+
+/* Estilos del resumen de los pedidos */
+.sombra-titulo{
+    padding-bottom: 15px;
+    border-bottom: 1px solid #cccccc;
+}
+
+select:disabled {
+    opacity: 1;
+    min-height: 43px;
+    display: block;
+    width: 100%;
+    padding-left: 9px;
+    border: 1px solid #cccccc;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos botones de la lista de productos */
+button.venta-but{
+    margin-top: 15px;
+}
+
+/* Estilos para la imagen del producto en el formulario de pedidos */
+.product-image{
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55), filter 0.3s ease-in-out;
+    filter: brightness(100%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
