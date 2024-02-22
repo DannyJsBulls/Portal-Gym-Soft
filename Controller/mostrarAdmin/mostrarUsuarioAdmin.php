@@ -86,7 +86,7 @@
                                 <p class="card-text mt-3 propio"> Email: ' . $f['email_usuario'] . '</p>
                                 <p class="card-text mt-3 propio"> Telefono: ' . $f['telefono_usuario'] . '</p>
                                 <p class="card-text mt-3 propio"> Estado: ' . $f['estado_usuario'] . '</p>
-                                <a href="modificarPerfilAdmin.php?id_user=' . $f['id_usuario'] . '" class="btn btn-primary w-100"> Actualizar Datos</a>
+                                <a href="modificarUsuario.php?id_user=' . $f['id_usuario'] . '" class="btn btn-primary w-100"> Actualizar Datos</a>
                             </div>
                         </div>
                     </div>
