@@ -87,16 +87,7 @@
                                 <p class="card-text mt-3 propio"> Email: ' . $f['email_usuario'] . '</p>
                                 <p class="card-text mt-3 propio"> Telefono: ' . $f['telefono_usuario'] . '</p>
                                 <p class="card-text mt-3 propio"> Estado: ' . $f['estado_usuario'] . '</p>
-                                <h2 class="cta-title">Estimado administrador,</h2>
-                                <p class="card-text propio">Asigne actividades personalizadas y libres ahora. Ofrecemos oportunidades únicas y emocionantes. Asegure lugares disponibles hoy.</p>
-                                <div class="row columna">
-                                    <div class="col-lg-6">
-                                        <a href="../Administrador/crearInscripcionesPerso.php" class="btn btn-primary w-100"> ACTIVIDAD PERSONALIZADA</a>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <a href="../Administrador/crearInscripcionesLibres.php" class="btn btn-primary w-100"> ACTIVIDAD LIBRE</a>
-                                    </div>
-                                </div>
+                                <a href="modificarCliente.php?id_user=' . $f['id_usuario'] . '" class="btn btn-primary w-100"> Actualizar Datos</a>
                             </div>
                         </div>
                     </div>
