@@ -91,10 +91,7 @@
                             <label>ROL</label>
                             <select name="rol_usuario" id="" class="form-control">
                                 <option value="' . $f['rol_usuario'] . '"> ' . $f['rol_usuario'] . ' </option>
-                                <option value="Administrador">Administrador</option>
-                                <option value="Entrenador">Entrenador</option>
                                 <option value="Cliente">Cliente</option>
-                                <option value="Proveedor">Proveedor</option>
                             </select>
                         </div>
                         <div class="form-group col-lg-4 col-md-6">
