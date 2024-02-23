@@ -9,7 +9,7 @@
     --sexto-color: #efefef;
 }
 
-h1,h2,h3,h4,h5,h6,b,input,button,td,th{
+h1,h2,h3,h4,h5,h6,b,input,button{
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -715,7 +715,7 @@ p.parrafo-table{
 /* Estilos para las celdas */
 .table-responsive th,
 .table-responsive td {
-    padding: 8px; /* Ajusta según sea necesario */
+    padding: 5px; /* Ajusta según sea necesario */
     vertical-align: top; /* Ajusta la alineación vertical */
 }
 
@@ -723,8 +723,8 @@ p.parrafo-table{
 .table-responsive td {
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 150px; /* ancho maximo para las celdas */
-    line-height: 25px;
+    max-width: 125px; /* ancho maximo para las celdas */
+    line-height: 18px;
 }
 
 .table-responsive th {
@@ -732,15 +732,16 @@ p.parrafo-table{
     color: var(--quinto-color);
     border: 1px solid #cccccc;
     text-align: center;
-    font-size: 13.9px;
+    font-size: 13px;
 }
 
 .table-striped>tbody>tr:nth-of-type(odd)>* {
+    background: #f0f6ffc6; /* Azul muy suave */
     --bs-table-bg-type: initial; /* O utiliza unset en lugar de initial si es más adecuado para tu caso */
 }
 
 .table-striped>tbody>tr:nth-of-type(odd):hover>* {
-    background: #e7f1fd; /* Color de fondo más oscuro al pasar el ratón por encima */
+    background: #fffff0; /* Amarillo extra suave */
     transition: background-color 0.3s; /* Agrega una transición suave para el cambio de color */
 }
 
@@ -748,12 +749,12 @@ p.parrafo-table{
 .table-responsive tbody td {
     background: var(--quinto-color);
     text-align: center;
-    font-size: 13.9px;
+    font-size: 13px;
 }
 
 /* Estilos para las filas en hover de la tabla responsive */
 .table-responsive tbody tr:hover>* {
-    background: #e7f1fd; /* Color de fondo más oscuro al pasar el ratón por encima */
+    background: #fffff0; /* Amarillo extra suave */
     transition: background-color 0.3s; /* Agrega una transición suave para el cambio de color */
 }
 
