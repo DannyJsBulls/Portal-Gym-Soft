@@ -1060,7 +1060,7 @@ h1.cash-pago{
 
 /* Estilos para el logo en el detalle de los planes */
 section #recibo{
-    background: var(--cuarto-color);
+    background: var(--segundo-color);
     border-top-right-radius: 25px;
     border-top-left-radius: 25px;
     border-right: 1px solid #323232;
@@ -1076,11 +1076,11 @@ section #recibo{
     max-width: 300px;
     margin: 0 auto;
     padding: 0;
-    background: var(--cuarto-color);
+    background: var(--segundo-color);
 }
 
 section #planta{
-    background: var(--primer-color);
+    background: var(--cuarto-color);
     padding: 25px;
     border-right: 1px solid #323232;
     border-left: 1px solid #323232;
@@ -1093,7 +1093,7 @@ h1.title-recibo{
     text-align: center;
     font-weight: 700;
     font-size: 20px;
-    color: #010A43;
+    color: var(--quinto-color);
 }
 
 article.body-recibo{
@@ -1139,7 +1139,7 @@ h3.parrafo-centro{
 }
 
 section #uno{
-    background: var(--cuarto-color);
+    background: var(--segundo-color);
     border-top-right-radius: 25px;
     border-top-left-radius: 25px;
     border-bottom: 1px solid #323232;

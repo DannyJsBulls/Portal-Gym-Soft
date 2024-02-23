@@ -111,7 +111,7 @@
                                     <div class="card">
                                         <section id="recibo">
                                             <div class="card-recibo">
-                                                <img src="../../Views/Extras/Logos/logo-trnasparente.png" class="logo-positivo" alt="Logo Gym">
+                                                <img src="../../Views/Extras/Logos/positivo.png" class="logo-positivo" alt="Logo Gym">
                                             </div>
                                         </section>
                                         <section id="planta">
