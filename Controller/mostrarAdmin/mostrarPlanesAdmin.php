@@ -23,7 +23,7 @@
                         <td>' . $f['estado_plan'] . '</td>
                         <td>' . $f['descuentos_plan'] . '</td>
                         <td>' . $f['categoria_plan'] . '</td>
-                        <td><a href="modificarPlanes.php?id_user=' . $f['codigo_plan'] . '" class="btn btn-success">Ver/Editar</a></td>
+                        <td><a href="modificarPlanes.php?id_user=' . $f['codigo_plan'] . '" class="btn btn-success">Editar <i class="icofont-ui-edit"></i></a></td>
                         <td><a href="../../Controller/eliminarAdmin/eliminarPlanesAdmin.php?id_user=' . $f['codigo_plan'] . '" class="btn btn-danger btnEliminacionPlan">Eliminar <i class="icofont-ui-delete"></i></a></td>
                     </tr>
                 ';

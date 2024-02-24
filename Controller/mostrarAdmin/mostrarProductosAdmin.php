@@ -23,8 +23,8 @@
                         <td>' . $f['precio_inicial_producto'] . '</td>
                         <td>' . $f['porcentaje_ganancia_producto'] . '</td>
                         <td>' . $f['precio_final_producto'] . '</td>
-                        <td><a href="modificarProductos.php?id_user=' . $f['codigo_producto'] . '" class="btn btn-success"> Ver/Editar</a></td>
-                        <td><a href="../../Controller/eliminarAdmin/eliminarProductosAdmin.php?id_user=' . $f['codigo_producto'] . '" class="btn btn-danger btnEliminacionProducto"> Eliminar <i class="icofont-ui-delete"></i></a></td>
+                        <td><a href="modificarProductos.php?id_user=' . $f['codigo_producto'] . '" class="btn btn-success">Editar <i class="icofont-ui-edit"></i></a></td>
+                        <td><a href="../../Controller/eliminarAdmin/eliminarProductosAdmin.php?id_user=' . $f['codigo_producto'] . '" class="btn btn-danger btnEliminacionProducto">Eliminar <i class="icofont-ui-delete"></i></a></td>
                     </tr>
                 ';
             }

@@ -25,10 +25,10 @@
                         <td>' . $f['metodo_pago_plan'] . '</td>
                         <td>' . $f['precio_venta_plan'] . '</td>
                         <td>' . $f['estado_venta_plan'] . '</td>
-                        <td><a href="verDetallePagoPlanes.php?id_user=' . $f['codigo_venta_plan'] . '" class="btn btn-info"> Remision</a></td>
-                        <td><a href="verDetallePedidoCliente.php?id_user=' . $f['codigo_venta_plan'] . '" class="btn btn-warning" style="color: white;"> Pedido</a></td>
-                        <td><a href="modificarPagos.php?id_user=' . $f['codigo_venta_plan'] . '" class="btn btn-success"> Ver/Actualizar</a></td>
-                        <td><a href="../../Controller/eliminarAdmin/eliminarPagosPlanesAdmin.php?id_user=' . $f['codigo_venta_plan'] . '" class="btn btn-danger btnEliminacionPagoPlan"> Eliminar <i class="icofont-ui-delete"></i></a></td>
+                        <td><a href="verDetallePagoPlanes.php?id_user=' . $f['codigo_venta_plan'] . '" class="btn btn-info">Remision <i class="icofont-law-document"></i></a></td>
+                        <td><a href="verDetallePedidoCliente.php?id_user=' . $f['codigo_venta_plan'] . '" class="btn btn-warning">Pedido <i class="icofont-fast-delivery"></i></a></td>
+                        <td><a href="modificarPagos.php?id_user=' . $f['codigo_venta_plan'] . '" class="btn btn-success">Editar <i class="icofont-ui-edit"></i></a></td>
+                        <td><a href="../../Controller/eliminarAdmin/eliminarPagosPlanesAdmin.php?id_user=' . $f['codigo_venta_plan'] . '" class="btn btn-danger btnEliminacionPagoPlan">Eliminar <i class="icofont-ui-delete"></i></a></td>
                     </tr>
                 ';
             }

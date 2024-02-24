@@ -25,9 +25,9 @@
                         <td>' . $f['metodo_pago_cliente'] . '</td>
                         <td>' . $f['precio_pedido_cliente'] . '</td>
                         <td>' . $f['estado_pedido_cliente'] . '</td>
-                        <td><a href="verDetalleVentaProductosCliente.php?id_user=' . $f['codigo_venta_producto'] . '" class="btn btn-info"> Remision</a></td>
-                        <td><a href="verPedidoProductoCliente.php?id_user=' . $f['codigo_venta_producto'] . '" class="btn btn-warning" style="color: white;"> Pedido</a></td>
-                        <td><a href="modificarVentasCliente.php?id_user=' . $f['codigo_venta_producto'] . '" class="btn btn-success"> Ver/Actualizar</a></td>
+                        <td><a href="verDetalleVentaProductosCliente.php?id_user=' . $f['codigo_venta_producto'] . '" class="btn btn-info">Remision <i class="icofont-law-document"></i></a></td>
+                        <td><a href="verPedidoProductoCliente.php?id_user=' . $f['codigo_venta_producto'] . '" class="btn btn-warning">Pedido <i class="icofont-fast-delivery"></i></a></td>
+                        <td><a href="modificarVentasCliente.php?id_user=' . $f['codigo_venta_producto'] . '" class="btn btn-success">Editar <i class="icofont-ui-edit"></i></a></td>
                         <td><a href="../../Controller/eliminarAdmin/eliminarVentasProductosClienteAdmin.php?id_user=' . $f['codigo_venta_producto'] . '" class="btn btn-danger btnEliminacionPagoProductoCliente"> Eliminar <i class="icofont-ui-delete"></i></a></td>
                     </tr>
                 ';
