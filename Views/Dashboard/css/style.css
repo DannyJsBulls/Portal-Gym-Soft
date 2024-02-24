@@ -736,12 +736,12 @@ p.parrafo-table{
 }
 
 .table-striped>tbody>tr:nth-of-type(odd)>* {
-    background: #eaeff8c6; /* Azul muy suave */
+    background: #ecf1f9c6; /* Azul muy suave */
     --bs-table-bg-type: initial; /* O utiliza unset en lugar de initial si es más adecuado para tu caso */
 }
 
 .table-striped>tbody>tr:nth-of-type(odd):hover>* {
-    background: #f7f7da; /* Amarillo extra suave */
+    background: #fdfdeb; /* Amarillo extra suave */
     transition: background-color 0.3s; /* Agrega una transición suave para el cambio de color */
 }
 
@@ -754,7 +754,7 @@ p.parrafo-table{
 
 /* Estilos para las filas en hover de la tabla responsive */
 .table-responsive tbody tr:hover>* {
-    background: #f7f7da; /* Amarillo extra suave */
+    background: #fdfdeb; /* Amarillo extra suave */
     transition: background-color 0.3s; /* Agrega una transición suave para el cambio de color */
 }
 
