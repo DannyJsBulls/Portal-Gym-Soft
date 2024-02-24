@@ -20,8 +20,8 @@
                         <td>' . $f['estado_actividad'] . '</td>
                         <td>' . $f['objetivos_actividad'] . '</td>
                         <td>' . $f['area_actividad'] . '</td>
-                        <td><a href="modificarActividades.php?id_user=' . $f['codigo_actividad'] . '" class="btn btn-success"> Ver/Editar</a></td>
-                        <td><a href="../../Controller/eliminarAdmin/eliminarActividadesAdmin.php?id_user=' . $f['codigo_actividad'] . '" class="btn btn-danger btnEliminacionActividad"> Eliminar <i class="icofont-ui-delete"></i></a></td>
+                        <td><a href="modificarActividades.php?id_user=' . $f['codigo_actividad'] . '" class="btn btn-success">Editar <i class="icofont-ui-edit"></i></a></td>
+                        <td><a href="../../Controller/eliminarAdmin/eliminarActividadesAdmin.php?id_user=' . $f['codigo_actividad'] . '" class="btn btn-danger btnEliminacionActividad">Eliminar <i class="icofont-ui-delete"></i></a></td>
                     </tr>
                 ';
             }
