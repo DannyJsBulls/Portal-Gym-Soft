@@ -23,7 +23,7 @@
                         <td>' . $f['rol_usuario'] . '</td>
                         <td>' . $f['clavemd'] . '</td>
                         <td><a href="modificarCliente.php?id_user=' . $f['id_usuario'] . '" class="btn btn-success">Editar <i class="icofont-ui-edit"></i></a></td>
-                        <td><a href="../../Controller/eliminarAdmin/eliminarClienteAdmin.php?id_user=' . $f['id_usuario'] . '" class="btn btn-danger btnEliminacionCliente"> Eliminar <i class="icofont-ui-delete"></i></a></td>
+                        <td><a href="../../Controller/eliminarAdmin/eliminarClienteAdmin.php?id_user=' . $f['id_usuario'] . '" class="btn btn-danger btnEliminacionCliente">Eliminar <i class="icofont-ui-delete"></i></a></td>
                     </tr>
                 ';
             }
