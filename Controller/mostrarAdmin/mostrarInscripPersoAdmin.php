@@ -16,7 +16,7 @@
                 $apellidoEntrenador = $objConsultas->obtenerApellidoUsuario($f['id_entrenador']);
                 echo '
                     <tr>
-                        <td><i class="icofont-clip-board planes"></i></td>
+                        <td><i class="icofont-file-alt planes"></i></td>
                         <td>' . $f['codigo_inscripcion_perso'] . '</td>
                         <td>' . $f['fecha_inicio_actividad'] . '</td>
                         <td>' . $f['hora_inicio_actividad'] . '</td>
@@ -26,9 +26,9 @@
                         <td>' . $f['codigo_venta_plan'] . '</td>
                         <td>' . $nombreUsuario . ' ' . $apellidoUsuario . '</td>
                         <td>' . $nombreEntrenador . ' ' . $apellidoEntrenador . '</td>
-                        <td><a href="verComprobanteInscripPerso.php?id_user=' . $f['codigo_inscripcion_perso'] . '" class="btn btn-info"> Comprobante</a></td>
-                        <td><a href="modificarInscripcionesPerso.php?id_user=' . $f['codigo_inscripcion_perso'] . '" class="btn btn-success"> Ver/Editar</a></td>
-                        <td><a href="../../Controller/eliminarAdmin/eliminarInscripcionesPersoAdmin.php?id_user=' . $f['codigo_inscripcion_perso'] . '" class="btn btn-danger btnEliminacionInscripPerso"> Eliminar <i class="icofont-ui-delete"></i></a></td>
+                        <td><a href="verComprobanteInscripPerso.php?id_user=' . $f['codigo_inscripcion_perso'] . '" class="btn btn-info">Comprobante <i class="icofont-ui-file"></i></a></td>
+                        <td><a href="modificarInscripcionesPerso.php?id_user=' . $f['codigo_inscripcion_perso'] . '" class="btn btn-success">Editar <i class="icofont-ui-edit"></i></a></td>
+                        <td><a href="../../Controller/eliminarAdmin/eliminarInscripcionesPersoAdmin.php?id_user=' . $f['codigo_inscripcion_perso'] . '" class="btn btn-danger btnEliminacionInscripPerso">Eliminar <i class="icofont-ui-delete"></i></a></td>
                     </tr>
                 ';
             }
