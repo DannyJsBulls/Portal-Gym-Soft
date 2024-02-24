@@ -22,8 +22,8 @@
                         <td>' . $f['estado_usuario'] . '</td>
                         <td>' . $f['rol_usuario'] . '</td>
                         <td>' . $f['clavemd'] . '</td>
-                        <td><a href="modificarProveedor.php?id_user=' . $f['id_usuario'] . '" class="btn btn-success"> Ver/Editar</a></td>
-                        <td><a href="../../Controller/eliminarAdmin/eliminarProveedorAdmin.php?id_user=' . $f['id_usuario'] . '" class="btn btn-danger btnEliminacionProveedor"> Eliminar <i class="icofont-ui-delete"></i></a></td>
+                        <td><a href="modificarProveedor.php?id_user=' . $f['id_usuario'] . '" class="btn btn-success">Editar <i class="icofont-ui-edit"></i></a></td>
+                        <td><a href="../../Controller/eliminarAdmin/eliminarProveedorAdmin.php?id_user=' . $f['id_usuario'] . '" class="btn btn-danger btnEliminacionProveedor">Eliminar <i class="icofont-ui-delete"></i></a></td>
                     </tr>
                 ';
             }
