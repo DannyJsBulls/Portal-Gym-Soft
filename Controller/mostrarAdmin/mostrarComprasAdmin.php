@@ -26,9 +26,9 @@
                         <td>' . $f['cantidad_pedido_proveedor'] . '</td>
                         <td>' . $f['precio_pedido_proveedor'] . '</td>
                         <td>' . $f['estado_pedido_proveedor'] . '</td>
-                        <td><a href="verDetallePagoProductosProvee.php?id_user=' . $f['codigo_compra_proveedor'] . '" class="btn btn-info"> Remision</a></td>
-                        <td><a href="verPedidoProductoProvee.php?id_user=' . $f['codigo_compra_proveedor'] . '" class="btn btn-warning" style="color: white;"> Pedido</a></td>
-                        <td><a href="modificarPagosProvee.php?id_user=' . $f['codigo_compra_proveedor'] . '" class="btn btn-success"> Ver/Actualizar</a></td>
+                        <td><a href="verDetallePagoProductosProvee.php?id_user=' . $f['codigo_compra_proveedor'] . '" class="btn btn-info">Remision <i class="icofont-law-document"></i></a></td>
+                        <td><a href="verPedidoProductoProvee.php?id_user=' . $f['codigo_compra_proveedor'] . '" class="btn btn-warning">Pedido <i class="icofont-fast-delivery"></i></a></td>
+                        <td><a href="modificarPagosProvee.php?id_user=' . $f['codigo_compra_proveedor'] . '" class="btn btn-success">Editar <i class="icofont-ui-edit"></i></a></td>
                         <td><a href="../../Controller/eliminarAdmin/eliminarPagosProductosProveeAdmin.php?id_user=' . $f['codigo_compra_proveedor'] . '" class="btn btn-danger btnEliminacionPagoProductoProvee"> Eliminar <i class="icofont-ui-delete"></i></a></td>
                     </tr>
                 ';
