@@ -21,8 +21,8 @@
         <a href="verTablaEntrenadores.php" class="d-block text-light p-3 item"><i class="icofont-muscle align-icon mr-2 lead"></i> Entrenadores</a>
         <a href="verTablaProveedores.php" class="d-block text-light p-3 item"><i class="icofont-live-messenger mr-2 lead"></i> Proveedores</a>
         <a href="verActividades.php" class="d-block text-light p-3 item"><i class="icofont-gym-alt-3 mr-2 lead"></i> Actividades</a>
-        <a href="verInscripcionesLibres.php" class="d-block text-light p-3 item"><i class="icofont-clip-board mr-2 lead"></i> Inscripciones Libres</a>
-        <a href="verInscripcionesPerso.php" class="d-block text-light p-3 item"><i class="icofont-clip-board mr-2 lead"></i> Inscripciones Personalizadas</a>
+        <a href="verInscripcionesLibres.php" class="d-block text-light p-3 item"><i class="icofont-file-alt mr-2 lead"></i> Inscripciones Libres</a>
+        <a href="verInscripcionesPerso.php" class="d-block text-light p-3 item"><i class="icofont-file-alt mr-2 lead"></i> Inscripciones Personalizadas</a>
         <a href="verPlanes.php" class="d-block text-light p-3 item"><i class="icofont-tags mr-2 lead"></i> Planes</a>
         <a href="verPagos.php" class="d-block text-light p-3 item"><i class="icofont-fast-delivery mr-2 lead"></i> Pedidos Planes</a>
         <a href="verProductos.php" class="d-block text-light p-3 item"><i class="icofont-dumbbell mr-2 lead"></i> Productos</a>

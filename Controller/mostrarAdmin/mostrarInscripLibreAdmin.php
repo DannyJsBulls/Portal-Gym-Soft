@@ -14,7 +14,7 @@
                 $apellidoUsuario = $objConsultas->obtenerApellidoUsuario($f['id_usuario']);
                 echo '
                     <tr>
-                        <td><i class="icofont-clip-board planes"></i></td>
+                        <td><i class="icofont-file-alt planes"></i></td>
                         <td>' . $f['codigo_inscripcion_libre'] . '</td>
                         <td>' . $f['fecha_inicio_actividad'] . '</td>
                         <td>' . $f['hora_inicio_actividad'] . '</td>
@@ -23,9 +23,9 @@
                         <td>' . $nombreActividad . '</td>
                         <td>' . $f['codigo_venta_plan'] . '</td>
                         <td>' . $nombreUsuario . ' ' . $apellidoUsuario . '</td>
-                        <td><a href="verComprobanteInscripLi.php?id_user=' . $f['codigo_inscripcion_libre'] . '" class="btn btn-info"> Comprobante</a></td>
-                        <td><a href="modificarInscripcionesLibres.php?id_user=' . $f['codigo_inscripcion_libre'] . '" class="btn btn-success"> Ver/Editar</a></td>
-                        <td><a href="../../Controller/eliminarAdmin/eliminarInscripcionesLibresAdmin.php?id_user=' . $f['codigo_inscripcion_libre'] . '" class="btn btn-danger btnEliminacionInscripLibre"> Eliminar <i class="icofont-ui-delete"></i></a></td>
+                        <td><a href="verComprobanteInscripLi.php?id_user=' . $f['codigo_inscripcion_libre'] . '" class="btn btn-info">Comprobante <i class="icofont-ui-file"></i></a></td>
+                        <td><a href="modificarInscripcionesLibres.php?id_user=' . $f['codigo_inscripcion_libre'] . '" class="btn btn-success">Editar <i class="icofont-ui-edit"></i></a></td>
+                        <td><a href="../../Controller/eliminarAdmin/eliminarInscripcionesLibresAdmin.php?id_user=' . $f['codigo_inscripcion_libre'] . '" class="btn btn-danger btnEliminacionInscripLibre">Eliminar <i class="icofont-ui-delete"></i></a></td>
                     </tr>
                 ';
             }

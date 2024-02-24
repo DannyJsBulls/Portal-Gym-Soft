@@ -723,7 +723,7 @@ p.parrafo-table{
 .table-responsive td {
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 125px; /* ancho maximo para las celdas */
+    max-width: 150px; /* ancho maximo para las celdas */
     line-height: 18px;
 }
 
