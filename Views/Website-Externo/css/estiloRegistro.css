@@ -213,14 +213,12 @@ input.margin:focus {
 }
 
 .carousel-item {
-    opacity: 0.6; /* Opacidad inicial */
     transform: scale(1.2);
     filter: blur(5px);
-    transition: opacity 1s ease, transform 1s ease, filter 1s ease; /* Transiciones múltiples */
+    transition: transform 1s ease, filter 1s ease;
 }
   
 .carousel-item.active {
-    opacity: 1; /* Opacidad cuando está activo */
     transform: scale(1);
     filter: brightness(0.7);
 }
