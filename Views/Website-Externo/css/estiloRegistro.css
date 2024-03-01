@@ -213,12 +213,12 @@ input.margin:focus {
 }
 
 .carousel-item {
-    transform: scale(1.2);
-    filter: blur(5px);
-    transition: transform 1s ease, filter 1s ease;
+    opacity: 0;
+    transform: rotateZ(180deg);
+    transition: opacity 1s ease, transform 1s ease;
 }
   
 .carousel-item.active {
-    transform: scale(1);
-    filter: brightness(0.7);
+    opacity: 1;
+    transform: rotateZ(0deg);
 }
