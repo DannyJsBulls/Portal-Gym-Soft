@@ -59,7 +59,9 @@
         </section>
         <div id="content-s" class="position-absolute top-50 start-50 translate-middle bg-background">
             <div id="logo">
-                <img src="../Extras/Logos/logo-trnasparente.png" class="img-fluid custom-img mx-auto">
+                <a href="../../index.html">
+                    <img src="../Extras/Logos/logo-trnasparente.png" class="img-fluid custom-img mx-auto">
+                </a>    
             </div>
             <div class="px-lg-5 py-lg-4 p-4 w-100 align-self-center">
                 <!-- clase text-light cambia el color del texto a blanco -->

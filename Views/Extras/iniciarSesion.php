@@ -68,7 +68,9 @@
                     <!-- clase pt-lg-4 Define un padding superior en los dispositivos largos(grandes) -->
                     <!-- clase pb-lg-3 define un padding inferior en los dispositivos largos(grandes) -->
                     <div class="px-lg-5 pt-lg-4 pb-lg-3 p-4 w-100 mb-auto">
-                        <img src="../Extras/Logos/logo-trnasparente.png" alt="Logo" class="img-fluid custom-img mx-auto">
+                        <a href="../../index.html">
+                            <img src="../Extras/Logos/logo-trnasparente.png" alt="Logo" class="img-fluid custom-img mx-auto">
+                        </a>
                     </div>
                     <div class="px-lg-5 py-lg-4 p-4 w-100 align-self-center">
                         <!-- clase text-light cambia el color del texto a blanco -->
@@ -104,7 +106,7 @@
                         </div>
                     </div>
                     <div class="text-center px-lg-5 pt-lg-3 pb-lg-4 p-4 w-100 mt-auto">
-                        <p class="d-inline-block mb-0">¿Todavia no tienes una cuenta?</p> <a href="registrarSesion.php" target="_blank" class="text-primary font-weight-bold text-decoration-none register">Crea una cuenta ahora</a>
+                        <p class="d-inline-block mb-0">¿Todavia no tienes una cuenta?</p> <a href="registrarSesion.php" class="text-primary font-weight-bold text-decoration-none register">Crea una cuenta ahora</a>
                     </div>
                 </div>
             </div>
