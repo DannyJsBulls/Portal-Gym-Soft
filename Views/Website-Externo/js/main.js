@@ -39,19 +39,14 @@ function applyNavbarStyle() {
 }
 
 
-// Este evento abre el link en la misma pagina o pestaña
-// document.getElementById("ingresarLogin").addEventListener("click", function() {
-//     window.location.href = "Views/Extras/iniciarSesion.php";
-// });
-
-// Este evento abre el link en una pestaña nueva
+//Este evento abre el link en la misma pagina o pestaña
 document.getElementById("ingresarLogin").addEventListener("click", function() {
-    window.open("Views/Extras/iniciarSesion.php", "_blank");
+    window.location.href = "Views/Extras/iniciarSesion.php";
 });
 
-// Este evento abre el link en una pestaña nueva
+//Este evento abre el link en la misma pagina o pestaña
 document.getElementById("registrarLogin").addEventListener("click", function() {
-    window.open("Views/Extras/registrarSesion.php", "_blank");
+    window.location.href = "Views/Extras/registrarSesion.php";
 });
 
 
