@@ -84,7 +84,7 @@
                 </form>
             </div>
             <div class="text-center px-lg-5 pt-lg-3 pb-lg-4 p-4 w-100 mt-auto">
-                <p class="d-inline-block mb-0">¿De vuelta?</p> <a href="iniciarSesion.php" target="_blank" class="text-primary font-weight-bold text-decoration-none register">Ingresar</a>
+                <p class="d-inline-block mb-0">¿De vuelta?</p> <a href="iniciarSesion.php" class="text-primary font-weight-bold text-decoration-none register">Ingresar</a>
             </div>
         </div>
         <script>
