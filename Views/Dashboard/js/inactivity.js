@@ -1,7 +1,7 @@
 // Función para cerrar sesión por inactividad
 function startTimer() {
     // Definir tiempo de inactividad en milisegundos (por ejemplo, 5 minutos)
-    const inactivityTime = 5 * 60 * 1000; // 5 minutos
+    const inactivityTime = 8 * 60 * 1000; // 8 minutos
     let timer;
     let logoutPending = false;
 
