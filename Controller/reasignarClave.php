@@ -77,7 +77,7 @@
                                             <table align="center" border="0" cellpadding="0" cellspacing="0" width="600" style="border: 1px solid #cccccc; border-collapse: collapse;">
                                                 <tr>
                                                     <td align="center" bgcolor="#212121" style="padding: 20px 0 20px 0; color: #ffffff; font-size: 28px; font-weight: bold; font-family: Arial, sans-serif;">
-                                                        <img src="https://dannyjsbulls.github.io/Logo-Proyecto/" alt="Logo" width="120" height="120" style="display: block;" />
+                                                        <img src="https://raw.githubusercontent.com/DannyJsBulls/Registro-con-HTML-Y-CSS/main/img/logo-trnasparente.png" alt="Logo" width="50%" height="50%" style="display: block;" />
                                                     </td>
                                                 </tr>
                                                 <tr>
