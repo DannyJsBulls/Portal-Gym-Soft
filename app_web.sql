@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-01-2024 a las 06:12:05
+-- Tiempo de generación: 17-03-2024 a las 04:57:05
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -129,54 +129,6 @@ CREATE TABLE `entrenadores` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `estadisticas_libres`
---
-
-CREATE TABLE `estadisticas_libres` (
-  `codigo_estadistica_libre` int(10) NOT NULL,
-  `fecha_actividad_estadistica_libre` date NOT NULL,
-  `duracion_estadistica_libre` varchar(50) NOT NULL,
-  `repeticiones_estadistica_libre` int(10) NOT NULL,
-  `peso_levantado_libre` decimal(10,2) DEFAULT NULL,
-  `distancia_recorrida_libre` decimal(10,2) DEFAULT NULL,
-  `velocidad_promedio_libre` decimal(10,2) DEFAULT NULL,
-  `calorias_quemadas_libre` int(10) NOT NULL,
-  `nivel_esfuerzo_libre` int(10) NOT NULL,
-  `tipo_ejercicio_libre` varchar(50) NOT NULL,
-  `zona_frecuencia_cardiaca_libre` varchar(50) NOT NULL,
-  `maximo_esfuerzo_libre` enum('Si','No') DEFAULT NULL,
-  `dificultad_actividad_libre` int(10) NOT NULL,
-  `descanso_entre_series_libre` varchar(50) DEFAULT NULL,
-  `codigo_inscripcion_libre` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `estadisticas_personalizadas`
---
-
-CREATE TABLE `estadisticas_personalizadas` (
-  `codigo_estadistica_perso` int(10) NOT NULL,
-  `fecha_estadistica_perso` date NOT NULL,
-  `duracion_estadistica_perso` varchar(50) NOT NULL,
-  `repeticiones_estadistica_perso` int(10) NOT NULL,
-  `peso_levantado_perso` decimal(10,2) DEFAULT NULL,
-  `distancia_recorrida_perso` decimal(10,2) DEFAULT NULL,
-  `velocidad_promedio_perso` decimal(10,2) DEFAULT NULL,
-  `calorias_quemadas_perso` int(10) NOT NULL,
-  `nivel_esfuerzo_perso` int(10) NOT NULL,
-  `tipo_ejercicio_perso` varchar(50) NOT NULL,
-  `zona_frecuencia_cardiaca_perso` varchar(50) NOT NULL,
-  `maximo_esfuerzo_perso` enum('Si','No') DEFAULT NULL,
-  `dificultad_perso` int(10) NOT NULL,
-  `descanso_entre_series_perso` varchar(50) DEFAULT NULL,
-  `codigo_inscripcion_perso` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `inscripciones_libres`
 --
 
@@ -213,7 +165,7 @@ CREATE TABLE `inscripciones_personalizadas` (
   `comentarios_inscripcion_perso` varchar(100) DEFAULT NULL,
   `codigo_actividad` int(10) NOT NULL,
   `codigo_venta_plan` int(10) NOT NULL,
-  `id_cliente` bigint(12) NOT NULL,
+  `id_usuario` bigint(12) NOT NULL,
   `id_entrenador` bigint(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -221,7 +173,7 @@ CREATE TABLE `inscripciones_personalizadas` (
 -- Volcado de datos para la tabla `inscripciones_personalizadas`
 --
 
-INSERT INTO `inscripciones_personalizadas` (`codigo_inscripcion_perso`, `fecha_inicio_actividad`, `hora_inicio_actividad`, `estado_inscripcion_perso`, `comentarios_inscripcion_perso`, `codigo_actividad`, `codigo_venta_plan`, `id_cliente`, `id_entrenador`) VALUES
+INSERT INTO `inscripciones_personalizadas` (`codigo_inscripcion_perso`, `fecha_inicio_actividad`, `hora_inicio_actividad`, `estado_inscripcion_perso`, `comentarios_inscripcion_perso`, `codigo_actividad`, `codigo_venta_plan`, `id_usuario`, `id_entrenador`) VALUES
 (1, '2024-01-23', '10:30:00', 'Programada', 'Actividad programada', 1010, 5, 1033773831, 1044578412),
 (2, '2024-01-24', '10:00:00', 'Programada', 'Actividad programada', 1012, 5, 1033773831, 1752149632);
 
@@ -394,7 +346,7 @@ INSERT INTO `usuarios` (`id_usuario`, `tipo_documento_usuario`, `nombres_usuario
 (1022478452, 'CC', 'Guillermo andres', 'Nova Forero', '1995-12-28', 'guillermo_nova@gmail.com', 3215871085, 'Activo', 'Cliente', '$2y$10$oXDfmpui4YdnGbNT6XWhSO4SVQjZjQsTA.0hVXb5KjeUlAZM1TZFe', '../../uploads/users/site-reliability-engineer.jpg'),
 (1022478458, 'CC', 'Claudia Marcela', 'Hernandez Amaya', '1997-05-14', 'claudia_marcela@gmail.com', 3217784150, 'Activo', 'Cliente', '$2y$10$.3kOi0q76CcRGwde3f9LT.d8apX2/rzF.khUPLieuEKoGRNYSaJCu', '../../uploads/users/vista-frontal-sonriente-mujer-posando.jpg'),
 (1033478521, 'CC', 'Fabian Oswaldo', 'Toro Hernandez', '1998-08-14', 'fabia_xt_20086@gmail.com', 3232316423, 'Activo', 'Cliente', '$2y$10$jahhVfQhj3J5bbdcEuLVguG2KpfYJhkWY8Amjih9vVn1Qf4mRH/PG', '../../uploads/users/team-2.jpg'),
-(1033773831, 'CC', 'Danny Steban', 'Toro Hernandez', '1995-03-22', 'danny.toro.1995@gmail.com', 3217799030, 'Activo', 'Administrador', '$2y$10$57W6KF0w1MhTSzIqnJjmTuD1r3nx6b6IWpfNJ14J7XHXiuxoSI77m', '../../uploads/users/foto carnet (1).png'),
+(1033773831, 'CC', 'Danny Steban', 'Toro Hernandez', '1995-03-22', 'danny.toro.1995@gmail.com', 3217799030, 'Activo', 'Administrador', '$2y$10$E9TZs2EN3JO0rykZKB/eR.ggt6GQUN5Xxaxc1V8wMGs0wkpC6UO6C', '../../uploads/users/IMG_20230107_174203.jpg'),
 (1044514784, 'CC', 'Andres Camilo', 'Miranda Ortiz', '1995-06-14', 'andres.camilo.ortiz@gmail.com', 3231478745, 'Activo', 'Cliente', '$2y$10$YecsbfQ19nVjt6hXOt2UjuWRumfuOroWESkwwi.HcT61XLPK7EEAK', '../../uploads/users/bg-5.jpg'),
 (1044578412, 'CC', 'Edwin Alexander', 'Huertas Hernandez', '1989-08-18', 'alex_edwin@gmail.com', 3234786425, 'Activo', 'Entrenador', '$2y$10$OlU3blAA8WH7M8uQmCBhwuBUFfSSFew0GqjviVakue.eeVlJzeAxO', '../../uploads/users/team-3.jpg'),
 (1044587965, 'CC', 'Deysi Johana', 'Patiño Diaz', '1996-05-14', 'desysi_diaz@gmail.com', 3104289014, 'Activo', 'Entrenador', '$2y$10$wgs45jSgESxYbfnN0lSXouISL19dBygsRo9YWtpgZsss4Y8JwJWye', '../../uploads/users/team-4.jpg'),
@@ -511,20 +463,6 @@ ALTER TABLE `compras_pedidos`
   ADD KEY `id_proveedor` (`id_usuario`);
 
 --
--- Indices de la tabla `estadisticas_libres`
---
-ALTER TABLE `estadisticas_libres`
-  ADD PRIMARY KEY (`codigo_estadistica_libre`),
-  ADD KEY `codigo_inscripcion_libre` (`codigo_inscripcion_libre`);
-
---
--- Indices de la tabla `estadisticas_personalizadas`
---
-ALTER TABLE `estadisticas_personalizadas`
-  ADD PRIMARY KEY (`codigo_estadistica_perso`),
-  ADD KEY `codigo_inscripcion_perso` (`codigo_inscripcion_perso`);
-
---
 -- Indices de la tabla `inscripciones_libres`
 --
 ALTER TABLE `inscripciones_libres`
@@ -540,7 +478,7 @@ ALTER TABLE `inscripciones_personalizadas`
   ADD PRIMARY KEY (`codigo_inscripcion_perso`),
   ADD KEY `codigo_actividad` (`codigo_actividad`),
   ADD KEY `codigo_venta_plan` (`codigo_venta_plan`),
-  ADD KEY `id_cliente` (`id_cliente`),
+  ADD KEY `id_cliente` (`id_usuario`),
   ADD KEY `id_entrenador` (`id_entrenador`);
 
 --
@@ -595,18 +533,6 @@ ALTER TABLE `compras_pedidos`
   MODIFY `codigo_compra_proveedor` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT de la tabla `estadisticas_libres`
---
-ALTER TABLE `estadisticas_libres`
-  MODIFY `codigo_estadistica_libre` int(10) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `estadisticas_personalizadas`
---
-ALTER TABLE `estadisticas_personalizadas`
-  MODIFY `codigo_estadistica_perso` int(10) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de la tabla `inscripciones_libres`
 --
 ALTER TABLE `inscripciones_libres`
@@ -648,18 +574,6 @@ ALTER TABLE `compras_pedidos`
   ADD CONSTRAINT `compras_pedidos_ibfk_2` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`);
 
 --
--- Filtros para la tabla `estadisticas_libres`
---
-ALTER TABLE `estadisticas_libres`
-  ADD CONSTRAINT `estadisticas_libres_ibfk_1` FOREIGN KEY (`codigo_inscripcion_libre`) REFERENCES `inscripciones_libres` (`codigo_inscripcion_libre`);
-
---
--- Filtros para la tabla `estadisticas_personalizadas`
---
-ALTER TABLE `estadisticas_personalizadas`
-  ADD CONSTRAINT `estadisticas_personalizadas_ibfk_1` FOREIGN KEY (`codigo_inscripcion_perso`) REFERENCES `inscripciones_personalizadas` (`codigo_inscripcion_perso`);
-
---
 -- Filtros para la tabla `inscripciones_libres`
 --
 ALTER TABLE `inscripciones_libres`
@@ -673,7 +587,7 @@ ALTER TABLE `inscripciones_libres`
 ALTER TABLE `inscripciones_personalizadas`
   ADD CONSTRAINT `inscripciones_personalizadas_ibfk_1` FOREIGN KEY (`codigo_actividad`) REFERENCES `actividades` (`codigo_actividad`),
   ADD CONSTRAINT `inscripciones_personalizadas_ibfk_2` FOREIGN KEY (`codigo_venta_plan`) REFERENCES `ventas_planes` (`codigo_venta_plan`),
-  ADD CONSTRAINT `inscripciones_personalizadas_ibfk_3` FOREIGN KEY (`id_cliente`) REFERENCES `usuarios` (`id_usuario`),
+  ADD CONSTRAINT `inscripciones_personalizadas_ibfk_3` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`),
   ADD CONSTRAINT `inscripciones_personalizadas_ibfk_4` FOREIGN KEY (`id_entrenador`) REFERENCES `usuarios` (`id_usuario`);
 
 --
